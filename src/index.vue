@@ -23,6 +23,10 @@ export default {
 </script>
 
 <style lang="scss">
+body {
+  font-size: 14px;
+  font-family: "PingFangSC-Regular";
+}
 body,
 html,
 input,
@@ -51,7 +55,7 @@ p {
       font-weight: bold;
       left: 50%;
       transform: translateX(-50%);
-      color: rgba($color:white, $alpha: .8);
+      color: rgba($color: white, $alpha: 0.8);
     }
     span {
       float: right;

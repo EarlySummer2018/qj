@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack-dev-server --open chrome --port 3000 --contentBase src"
+    "dev": "webpack-dev-server --open chrome --port 3000 --contentBase src --host 192.168.43.231"
   },
   "keywords": [],
   "author": "",

@@ -45,18 +45,31 @@
               id="endTime"
               v-model="date1"
               placeholder="请选择开始时间"
-              @click="start"
+              @click="end"
               onfocus="this.blur()"
             />
           </div>
         </div>
         <div class="form_content_box">
           <div class="content">
-            <label for="end_time">
+            <label for="patriarch">
               <span class="icon">*</span>
               <span class="text">家长姓名</span>
             </label>
-            <input type="text" name="patriarch" placeholder="请输入家长姓名" />
+            <input type="text" name="patriarch" class="patriarch" placeholder="请输入家长姓名" />
+          </div>
+        </div>
+        <div class="form_content_box">
+          <div class="content">
+            <label for="label_course">
+              <span class="text">&nbsp;请假课程</span>
+            </label>
+            <input type="text" name="label_course" class="course" placeholder="请输入请假课程" />
+          </div>
+        </div>
+        <div class="btn_box">
+          <div class="shadow_box">
+            <input type="button" value="提交" class="btn" />
           </div>
         </div>
       </form>
@@ -109,7 +122,10 @@ p {
   display: inline-block;
 }
 #fillbox {
+  height: 100vh;
+  background-color: #f8f8f8;
   .form_content {
+    background-color: white;
     .form_content_box {
       width: 100%;
       height: 50px;
@@ -125,7 +141,8 @@ p {
         #type,
         #startTime,
         #endTime,
-        .patriarch {
+        .patriarch,
+        .course {
           position: absolute;
           width: 200px;
           right: 5px;
@@ -136,7 +153,9 @@ p {
           color: gray;
         }
         #endTime,
-        #startTime {
+        #startTime,
+        .patriarch,
+        .course {
           text-indent: 4px;
         }
       }
@@ -149,6 +168,31 @@ p {
     .text {
       float: left;
       font-size: 14px;
+    }
+    .btn_box {
+      position: fixed;
+      width: 100%;
+      height: 60px;
+      bottom: 0;
+      padding: 5px;
+      box-sizing: border-box;
+      .shadow_box {
+        width: 100%;
+        height: 50px;
+        padding: 5px 10px;
+        background-color: white;
+        border-radius: 2px;
+        box-sizing: border-box;
+        box-shadow: 0px -1px 3px gray;
+        .btn {
+          width: 100%;
+          height: 40px;
+          color: white;
+          background-color: #49a2e6;
+          border: none;
+          border-radius: 2px;
+        }
+      }
     }
   }
 }
