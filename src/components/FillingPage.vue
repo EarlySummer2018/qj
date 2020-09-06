@@ -24,9 +24,6 @@
             </label>
             <select name="type_menu" id="type">
               <option value>请选择开始时间</option>
-              <option value="病假">病假</option>
-              <option value="事假">事假</option>
-              <option value="婚假">婚假</option>
             </select>
           </div>
         </div>
@@ -38,9 +35,6 @@
             </label>
             <select name="type_menu" id="type">
               <option value>请选择结束时间</option>
-              <option value="病假">病假</option>
-              <option value="事假">事假</option>
-              <option value="婚假">婚假</option>
             </select>
           </div>
         </div>
