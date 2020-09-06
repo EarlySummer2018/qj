@@ -50,6 +50,15 @@
             />
           </div>
         </div>
+        <div class="form_content_box">
+          <div class="content">
+            <label for="end_time">
+              <span class="icon">*</span>
+              <span class="text">家长姓名</span>
+            </label>
+            <input type="text" name="patriarch" placeholder="请输入家长姓名" />
+          </div>
+        </div>
       </form>
     </div>
   </div>
@@ -115,7 +124,8 @@ p {
         border-bottom: 1px solid rgba($color: #000000, $alpha: 0.1);
         #type,
         #startTime,
-        #endTime {
+        #endTime,
+        .patriarch {
           position: absolute;
           width: 200px;
           right: 5px;
@@ -127,7 +137,7 @@ p {
         }
         #endTime,
         #startTime {
-            text-indent: 4px;
+          text-indent: 4px;
         }
       }
     }
