@@ -25,6 +25,7 @@ export default {
 <style lang="scss">
 body,
 html,
+input,
 div,
 ul,
 li,
