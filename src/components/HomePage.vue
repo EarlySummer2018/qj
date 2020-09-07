@@ -38,7 +38,16 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      flag: true,
+    }
+  },
+  methods: {
+
+  }
+};
 </script>
 
 <style lang="scss">

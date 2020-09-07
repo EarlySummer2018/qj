@@ -1,6 +1,7 @@
 <template>
   <div id="box">
     <div id="header_box">
+      <span class="back" @click="goBack" v-show="flag">&lt;返回</span>
       <p>请假管理</p>
       <span class="r">
         <i class="circle"></i>
@@ -17,7 +18,23 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+      flag: true,
+    };
+  },
+  methods: {
+    goBack() {
+      this.$router.go(-1);
+    },
+  },
+  watch: {
+    "$route.path": function (newVal) {
+      if (this.$route.path === "/home") {
+        this.flag = false;
+      } else {
+        this.flag = true;
+      }
+    },
   },
 };
 </script>
@@ -48,6 +65,14 @@ p {
     height: 50px;
     background-color: cyan;
     line-height: 50px;
+    .back {
+      position: absolute;
+      width: 50px;
+      top: 0px;
+      left: 10px;
+      color: white;
+      font-size: 15px;
+    }
     p {
       position: absolute;
       display: inline-block;
