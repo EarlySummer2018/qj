@@ -77,7 +77,7 @@
         </div>
         <div class="btn_box">
           <div class="shadow_box">
-            <input type="submit" value="提交" class="btn" @click="clk" />
+            <input type="submit" value="提交" class="btn"/>
           </div>
         </div>
       </form>
@@ -115,9 +115,6 @@ export default {
           this.date1 = e;
         },
       });
-    },
-    clk() {
-      console.log("123");
     },
   },
 };
