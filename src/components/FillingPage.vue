@@ -1,7 +1,7 @@
 <template>
   <div id="fillbox">
     <div class="form_box">
-      <form action="#" method="post" class="form_content">
+      <form action method="post" class="form_content">
         <div class="form_content_box">
           <div class="content">
             <label for="type">
@@ -18,35 +18,35 @@
         </div>
         <div class="form_content_box">
           <div class="content">
-            <label for="start_time">
+            <label for="startTime">
               <span class="icon">*</span>
               <span class="text">开始时间</span>
             </label>
             <input
               type="text"
-              name="start_time"
               id="startTime"
               v-model="date"
               placeholder="请选择开始时间"
               @click="start"
               onfocus="this.blur()"
+              required
             />
           </div>
         </div>
         <div class="form_content_box">
           <div class="content">
-            <label for="end_time">
+            <label for="endTime">
               <span class="icon">*</span>
               <span class="text">结束时间</span>
             </label>
             <input
               type="text"
-              name="end_time"
               id="endTime"
               v-model="date1"
               placeholder="请选择开始时间"
               @click="end"
               onfocus="this.blur()"
+              required
             />
           </div>
         </div>
@@ -56,20 +56,28 @@
               <span class="icon">*</span>
               <span class="text">家长姓名</span>
             </label>
-            <input type="text" name="patriarch" class="patriarch" placeholder="请输入家长姓名" />
+            <input type="text" id="patriarch" class="patriarch" placeholder="请输入家长姓名" required />
           </div>
         </div>
-        <div class="form_content_box">
-          <div class="content">
+        <div class="form_content_box1">
+          <div class="content_c">
             <label for="label_course">
               <span class="text">&nbsp;请假课程</span>
             </label>
-            <input type="text" name="label_course" class="course" placeholder="请输入请假课程" />
+            <input type="text" id="label_course" class="course" placeholder="请输入请假课程" required />
+          </div>
+        </div>
+        <div class="form_content_box1">
+          <div class="content_r">
+            <label for="reason">
+              <span class="text">&nbsp;请假理由</span>
+            </label>
+            <input type="text" id="reason" class="course" placeholder="请输入请假理由" required />
           </div>
         </div>
         <div class="btn_box">
           <div class="shadow_box">
-            <input type="button" value="提交" class="btn" />
+            <input type="submit" value="提交" class="btn" @click="clk" />
           </div>
         </div>
       </form>
@@ -108,10 +116,8 @@ export default {
         },
       });
     },
-  },
-  watch: {
-    data(newVal, oldVal) {
-      console.log(newVal);
+    clk() {
+      console.log("123");
     },
   },
 };
@@ -120,6 +126,9 @@ export default {
 <style lang="scss">
 p {
   display: inline-block;
+}
+input {
+  outline: none;
 }
 #fillbox {
   height: 100vh;
@@ -145,6 +154,44 @@ p {
         .course {
           position: absolute;
           width: 200px;
+          height: 40px;
+          right: 5px;
+          top: 50%;
+          transform: translateY(-50%);
+          border: none;
+          font-size: 12px;
+          color: gray;
+        }
+        #endTime,
+        #startTime,
+        .patriarch,
+        .course {
+          text-indent: 4px;
+        }
+      }
+    }
+    .form_content_box1 {
+      width: 100%;
+      height: 80px;
+      line-height: 80px;
+      padding: 5px;
+      box-sizing: border-box;
+      .content_c,
+      .content_r {
+        position: relative;
+        width: 100%;
+        height: 70px;
+        line-height: 70px;
+        border-bottom: 1px solid rgba($color: #000000, $alpha: 0.1);
+        #type,
+        #startTime,
+        #endTime,
+        .patriarch,
+        .course {
+          position: absolute;
+          width: 200px;
+          height: 70px;
+          line-height: 70px;
           right: 5px;
           top: 50%;
           transform: translateY(-50%);
